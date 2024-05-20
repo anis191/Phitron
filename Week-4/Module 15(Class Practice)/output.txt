@@ -1,0 +1,3 @@
+length of str:6
+length of str:6
+AnisZl

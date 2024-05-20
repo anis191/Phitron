@@ -1,0 +1,9 @@
+There are two types of sorting array:-
+1.Ascending Order:-
+    a = {10,20,30,40,50};
+    Means left to right is small to big values
+2.Descending Order:-
+    a = {50,40,30,20,10};
+    Means left to right is big to small values
+*** Here we do this sorting useing "Selection 
+    sort algorithm"

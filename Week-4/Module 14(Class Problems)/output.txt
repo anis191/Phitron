@@ -1,0 +1,5 @@
+1.Value of a: 5
+2.Address of a: 0061FF28
+3.Address of a: 0061FF28
+3.Value of a: 10
+4.Value of a: 10
