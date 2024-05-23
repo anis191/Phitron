@@ -15,7 +15,7 @@ class Student{
 };
 Student* test(){
     // Student anis(2314,15,3.21,'B');
-    Student *anis = new Student(2314,15,3.21,'B');
+    Student *anis = new Student(2314,5,3.21,'B');
     // Student *p = &anis;
     return anis;
 }

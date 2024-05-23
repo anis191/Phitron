@@ -15,7 +15,7 @@ class Student{
 };
 int main(){
     Student anis(2314,15,3.52,'A');
-    Student muhi(2270,15,2.11,'B');
+    Student muhi(3370,15,2.11,'B');
     cout<<anis.id<<" "<<anis.cls<<" "<<anis.gpa<<" "<<anis.gread<<endl;
     cout<<muhi.id<<" "<<muhi.cls<<" "<<muhi.gpa<<" "<<muhi.gread<<endl;
     return 0;
