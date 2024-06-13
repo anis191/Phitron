@@ -1,0 +1,11 @@
+1. int a[n], b[n], c[n]
+Here, Total used space = (n + n +n)
+So, Space Complexity => O(n+n+n) => O(3n) => O(n)
+
+2. Space Complexity calculate for a 2D array:-
+--> int a[row][column]
+Here, Total used space = (row * column)
+example:-
+int a[n][n/2]
+Here, Total used space = (n * (n/2))
+So, Space Complexity => O(n * (n/2)) => O(n^2 / 2) => O(n^2)
