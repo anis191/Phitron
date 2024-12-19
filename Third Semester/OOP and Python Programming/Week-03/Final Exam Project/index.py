@@ -11,42 +11,27 @@ class Customers(Person):
         self.customer_no = len(Restaurant.all_customers) + 1
         super().__init__(name, email, address)
         self.balance = 0
-        self.cart = {}
+        self.cart = []
     
     def view_menu(self):
         Restaurant.show_menu()
 
     def place_order(self, item_name, quantity):
-        item = Restaurant.Find_item(item_name=item_name)
-        if item is not None:
-            if item.quantity > 0:
-                if item.quantity >= quantity:
-                    total = Restaurant.total(item=item, quantity=quantity)
-                    if total <= self.balance:
-                        self.cart[item.item_name] = quantity
-                        item.quantity -= quantity
-                        self.balance -= total
-                        print("Order Successfull!")
-                    else:
-                        print(f"Your total bill: {total}$")
-                        print(f"Your current balance is {self.balance}$")
-                        print(f"Please fund {total - self.balance} more")
-                else:
-                    print(f"Sorry! Recently \"{item.quantity}\"- {item.item_name} is avaiable")
-            else:
-                print(f"Sorry! Recently \"{item.item_name}\" item is not avaiable")
-        else:
-            print(f"{item_name} is not found")
+        Restaurant.place_order(self=self, item_name=item_name, quantity=quantity)
 
-
-    def check_balance(self):    #getter/setter
-        pass
+    def check_balance(self):
+        print(f"Your Current Balance is: {self.balance}")
 
     def view_all_orders(self):
-        pass
+        print(f"Your All Past Orders: ")
+        i = 1
+        for order in self.cart:
+            for key,value in order.items():
+                print(f"{i}. {key} - {value}")
+            i += 1
 
     def add_funds(self, amount):
-        self.balance = amount
+        self.balance += amount
 
 class Admin(Person):
     def __init__(self, name, email, address):
@@ -74,8 +59,8 @@ class Admin(Person):
         Restaurant.update_menu_item(item_name, new_name, new_price, new_quantity)
 
 class Restaurant:
-    all_customers = []  #all customers objects
-    all_menu_items = [] #all menu items object
+    all_customers = []  
+    all_menu_items = [] 
 
     @classmethod
     def add_customer(cls,customer):
@@ -134,6 +119,30 @@ class Restaurant:
                 return item
         return None
     
+    def place_order(self, item_name, quantity):
+        item = Restaurant.Find_item(item_name=item_name)
+        if item is not None:
+            if item.quantity > 0:
+                if item.quantity >= quantity:
+                    total = Restaurant.total(item=item, quantity=quantity)
+                    if total <= self.balance:
+                        # self.cart[item.item_name] = quantity
+                        self.cart.append({item_name : quantity})
+                        item.quantity -= quantity
+                        self.balance -= total
+                        print("Order Successfull!")
+                    else:
+                        print(f"Your total bill: {total}$")
+                        print(f"Your current balance is {self.balance}$")
+                        print(f"Please fund {total - self.balance} more")
+                else:
+                    print(f"Sorry! Recently \"{item.quantity}\"- {item.item_name} is avaiable")
+            else:
+                print(f"Sorry! Recently \"{item.item_name}\" item is not avaiable")
+        else:
+            print(f"{item_name} is not found")
+
+    
     @staticmethod
     def total(item, quantity):
         return item.price * quantity
@@ -144,22 +153,3 @@ class Menu:
         self.price = price
         self.quantity = quantity
 
-#Code Test
-admin = Admin('anis','@','dsxd')
-customer = Customers('arif','arif@@','daka')
-admin.add_customer(customer=customer)
-customer = Customers('asif','asif@@','ctg')
-admin.add_customer(customer=customer)
-# admin.remove_customers(1)
-# admin.view_all_customers()
-
-item = Menu('pizza', 5, 10)
-admin.add_menu_item(item=item)
-item = Menu('bargur', 5, 10)
-admin.add_menu_item(item=item)
-
-customer.add_funds(15)
-customer.view_menu()
-customer.place_order('pizza', 2)
-print(customer.cart)
-customer.place_order('pizza', 2)
