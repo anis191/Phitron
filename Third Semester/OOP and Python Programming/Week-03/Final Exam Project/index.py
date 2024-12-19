@@ -20,18 +20,19 @@ class Customers(Person):
         Restaurant.place_order(self=self, item_name=item_name, quantity=quantity)
 
     def check_balance(self):
-        print(f"Your Current Balance is: {self.balance}")
+        print(f"\nYour Current Balance is: {self.balance}$")
 
     def view_all_orders(self):
-        print(f"Your All Past Orders: ")
+        print(f"\nYour All Past Orders: \n")
         i = 1
         for order in self.cart:
             for key,value in order.items():
-                print(f"{i}. {key} - {value}")
+                print(f"{i}. Item:{key}\tQuantity:{value}")
             i += 1
 
     def add_funds(self, amount):
         self.balance += amount
+        print(f"\n{amount}$ added successfully!")
 
 class Admin(Person):
     def __init__(self, name, email, address):
@@ -68,24 +69,23 @@ class Restaurant:
 
     @staticmethod
     def customers_details():
-        print(f"Customer Id\tName\tEmail\tAddress")
-        print(f"--------------------------------------")
+        print("\n"+"-" * 70)
         for customer in Restaurant.all_customers:
-            print(f"{customer.customer_id}\t{customer.name}\t{customer.email}\t{customer.address}")
-        print(f"--------------------------------------")
+            print(f"=>Id:{customer.customer_id} Name:{customer.name} Email:{customer.email} Address:{customer.address}")
+        print(f"-" * 70)
     
     @classmethod
     def delete_customer_account(cls, customer_id):
         if len(cls.all_customers) == 0:
-            print(f"There is no customer avaiable")
+            print(f"\n[There is no customer avaiable now]")
         else:
             if customer_id > cls.all_customers[-1].customer_id:
-                print(f"Here last customer is: {cls.all_customers[-1].customer_id}")
+                print(f"\n[Here the last customer is: {cls.all_customers[-1].customer_id}]")
             else:
                 for customer in cls.all_customers:
                     if customer.customer_id == customer_id:
                         cls.all_customers.remove(customer)
-                        print(f"Customer Id - {customer.customer_id} successfully removed")
+                        print(f"\nCustomer Id-{customer.customer_id} successfully removed")
 
     @classmethod
     def update_menu_item(cls,item_name, new_name, new_price, new_quantity):
@@ -96,7 +96,7 @@ class Restaurant:
             item.quantity = new_quantity
             print(f"\nItem update Successfully")
         else:
-            print(f"\"{item_name}\" is not found")
+            print(f"\n\"{item_name}\" is not found")
     
     @classmethod
     def remove_menu_item(cls, item_name):
@@ -105,15 +105,17 @@ class Restaurant:
             cls.all_menu_items.remove(item)
             print(f"\n{item_name} remove Successfully")
         else:
-            print(f"\"{item_name}\" is not found")
+            print(f"\n\"{item_name}\" is not found")
     
     @classmethod
     def show_menu(cls):
+        print("\n"+"*" * 25)
         print(f"Item\tPrice\tAvaiable")
-        print(f"************************")
+        print("-" * 25)
         for item in cls.all_menu_items:
-            print(f"{item.item_name}\t{item.price}\t{item.quantity}")
-        print(f"*************************")
+            print(f"{item.item_name}\t {item.price}\t {item.quantity}")
+        # print(f"*************************")
+        print("*" * 25)
     
     @staticmethod
     def Find_item(item_name):
@@ -129,21 +131,20 @@ class Restaurant:
                 if item.quantity >= quantity:
                     total = Restaurant.total(item=item, quantity=quantity)
                     if total <= self.balance:
-                        # self.cart[item.item_name] = quantity
                         self.cart.append({item_name : quantity})
                         item.quantity -= quantity
                         self.balance -= total
-                        print("Order Successfull!")
+                        print("\nOrder Successfull!")
                     else:
-                        print(f"Your total bill: {total}$")
-                        print(f"Your current balance is {self.balance}$")
-                        print(f"Please fund {total - self.balance} more")
+                        print(f"\nYour total bill: {total}$")
+                        print(f"Your current balance is: {self.balance}$")
+                        print(f"Please fund {total - self.balance}$ more")
                 else:
-                    print(f"Sorry! Recently \"{item.quantity}\"- {item.item_name} is avaiable")
+                    print(f"\nSorry! Recently \"{item.quantity}\"- {item.item_name} is avaiable")
             else:
-                print(f"Sorry! Recently \"{item.item_name}\" item is not avaiable")
+                print(f"\nSorry! Recently \"{item.item_name}\" item is not avaiable")
         else:
-            print(f"{item_name} is not found")
+            print(f"\n{item_name} is not found")
 
     
     @staticmethod
@@ -157,7 +158,7 @@ class Menu:
         self.quantity = quantity
 
 def customer_interface():
-    print("\n Create a customer account--> \n")
+    print("\nCreate a customer account--> \n")
     name = input("Enter Your Name: ")
     email = input("Enter Your Email: ")
     address = input("Enter Your Address: ")
@@ -165,7 +166,33 @@ def customer_interface():
     Restaurant.all_customers.append(customer)
     print(f"\nWelcome {name}")
     while(True):
-        pass
+        print("\n1. View menu")
+        print("2. Place a order")
+        print("3. Check balance")
+        print("4. View past orders")
+        print("5. Add funds")
+        print("6. Exit")
+        try:
+            choice = int(input("Enter Your Choice: "))
+            if choice == 1:
+                customer.view_menu()
+            elif choice == 2:
+                item_name = input("\nEnter item name: ")
+                quantity = int(input("Enter Quantity: "))
+                customer.place_order(item_name=item_name, quantity=quantity)
+            elif choice == 3:
+                customer.check_balance()
+            elif choice == 4:
+                customer.view_all_orders()
+            elif choice == 5:
+                amount = int(input("Enter amount: "))
+                customer.add_funds(amount=amount)
+            elif choice == 6:
+                break
+            else:
+                print("\nInvalid Input")
+        except:
+            print("\nWrong Input:[Enter your choice as a number(1/2/3....)]")
 
 def admin_interface():
     print("\nCreate admin account-->")
@@ -196,24 +223,24 @@ def admin_interface():
                 admin.view_all_customers()
             elif choice == 3:
                 try:
-                    customer_id = int(input("Enter customer id: "))
+                    customer_id = int(input("\nEnter customer id: "))
                     admin.remove_customers(customer_id=customer_id)
                 except:
-                    print("For delete a customer, need customer id")
+                    print("\n[For delete a customer, need customer id]")
             elif choice == 4:
                 admin.view_menu()
             elif choice == 5:
-                item_name = input("Enter item name: ")
-                price = int(input("Enter item price"))
+                item_name = input("\nEnter item name: ")
+                price = int(input("Enter item price: "))
                 quantity = int(input("Enter initial quantity: "))
                 item = Menu(item_name=item_name, price=price, quantity=quantity)
                 admin.add_menu_item(item=item)
                 print("\nItems Added Successfully")
             elif choice == 6:
-                item_Name = input("Enter item name: ")
+                item_Name = input("\nEnter item name: ")
                 admin.remove_menu_item(item_name=item_Name)
             elif choice == 7:
-                Item_name = input("Enter item name(old): ")
+                Item_name = input("\nEnter item name(old): ")
                 new_name = input("Enter item name(new): ")
                 new_price = int(input("Enter item new price: "))
                 add_quantity = int(input("Add/update item quantity: "))
@@ -243,24 +270,3 @@ while(True):
             print("\nInvalid Input")
     except:
         print("\nWrong Input:[Enter your choice as a number(1/2/3)]")
-
-
-
-
-#Code Test
-'''
-admin = Admin('anis','@','dsxd')
-customer = Customers('arif','arif@@','daka')
-admin.add_customer(customer=customer)
-customer = Customers('asif','asif@@','ctg')
-admin.add_customer(customer=customer)
-# admin.remove_customers(1)
-# admin.view_all_customers()
-
-item = Menu('pizza', 5, 10)
-admin.add_menu_item(item=item)
-item = Menu('bargur', 5, 10)
-admin.add_menu_item(item=item)
-
-admin.view_all_customers()
-admin.view_menu()'''
