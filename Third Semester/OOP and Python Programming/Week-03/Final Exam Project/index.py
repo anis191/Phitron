@@ -144,7 +144,7 @@ class Restaurant:
             else:
                 print(f"\nSorry! Recently \"{item.item_name}\" item is not avaiable")
         else:
-            print(f"\n{item_name} is not found")
+            print(f"\n\"{item_name}\" is not found")
 
     
     @staticmethod
