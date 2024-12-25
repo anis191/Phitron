@@ -1,0 +1,16 @@
+.p1{
+    width: 50%;
+    font-size: 15px;
+    background-color: aqua;
+    text-align: justify;
+}
+
+#d1{
+    height: 220px;
+    width: 25vw;
+    background-image: url(/HTML/peakpx\ \(1\).jpg);
+    background-size: cover;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+}

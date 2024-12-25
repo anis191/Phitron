@@ -1,0 +1,80 @@
+#box{
+    height: 150px;
+    width: 200px;
+    background-color: blue;
+    color: white;
+    text-indent: 20px;
+    text-align: justify;
+}
+
+.heading{
+    color: red;
+    text-align: center;
+}
+
+#box2{
+    height: 100px;
+    width: 400px;
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+
+#text-decoration p{
+    color: red;
+    font-size: 20px;
+    text-align: center;
+}
+
+#text-decoration #line1{
+    text-decoration:blue underline;
+}
+#text-decoration #line2{
+    text-decoration:black overline;
+}
+#text-decoration #line3{
+    text-decoration:green line-through;
+}
+#text-decoration a{
+    text-decoration: none;
+}
+
+.font-weight #l1{
+    font-weight: normal;
+}
+.font-weight #l1{
+    font-weight: normal;
+}
+.font-weight #l2{
+    font-weight: bold;
+}
+.font-weight #l3{
+    font-weight: bolder;
+}
+.font-weight #l4{
+    font-weight: lighter;
+}
+.font-weight #l5{
+    font-weight: 100;
+}
+.font-weight #l6{
+    font-weight: 800;
+}
+
+#section-1{
+    text-align: center;
+}
+
+#section-1 .a{
+    font-size: 20px;
+    font-family: fantasy;
+    text-decoration: none;
+    text-transform: capitalize;
+}
+#section-1 .b{
+    border-left: 1px solid black;
+    border-right: 2px solid black;
+    border-top: 5px solid green;
+    border-bottom: 5px solid yellow;
+    text-transform: uppercase;
+}

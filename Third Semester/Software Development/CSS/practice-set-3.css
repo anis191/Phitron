@@ -1,0 +1,24 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+#layout div{
+    height: 100px;
+    width: 100px;
+    border: 3px solid black;
+    margin-bottom: 5px;
+    display: inline-block;
+    margin-left: 50px;
+    margin-top: 50px;
+}
+
+#layout #header{
+    background-color: rgba(255, 0, 0, 0.5);
+}
+#content{
+    background-color: rgba(0, 255, 0, 0.5);
+}
+#footer{
+    background-color: rgba(0, 0, 255, 0.5);
+}

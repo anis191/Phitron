@@ -1,0 +1,47 @@
+/* Universal selector */
+*{
+    color: blue;
+}
+
+/* element selector */
+h1{
+    color: red;
+}
+
+form{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 25px;
+}
+
+/* id */
+#div1{
+    height: 50px;
+    width: 100px;
+    background-color: yellow;
+}
+
+#div2, #div3{
+    height: 50px;
+    width: 150px;
+    background-color: green;
+    color: white;
+}
+
+#div4, #div5{
+    height: 50px;
+    width: 200px;
+    background-color: black;
+    color: wheat;
+}
+
+/* class */
+.first{
+    height: 50px;
+    width: 100px;
+    background-color: tomato;
+}
+.second{
+    height: 50px;
+    width: 150px;
+    background-color: turquoise;
+}
