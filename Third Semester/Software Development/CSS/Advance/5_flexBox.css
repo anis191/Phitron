@@ -1,0 +1,21 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.box{
+    height: 80vh;
+    width: 80vw;
+    background-color: yellow;
+    margin: 0 auto;
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+.box > div{
+    height: 20%;
+    flex-basis: 100px;
+    background-color: tomato;
+    margin: 5px;
+    flex-grow: 1;
+}

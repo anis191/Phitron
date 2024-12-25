@@ -1,0 +1,124 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+header nav{
+    height: 15vh;
+    width: 100vw;
+    background-color: #C0C0C0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+nav .menu ul li{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.3rem;
+    list-style: none;
+    padding: 10px;
+}
+nav .menu ul li:hover{
+    box-sizing: border-box;
+    background-color: #800000;
+    color: white;
+    cursor: pointer;
+}
+nav .logo{
+    padding: 10px;
+}
+nav .menu ul{
+    display: flex;
+    gap: 1in;
+}
+
+/* ---------------------------- main section -------------------------- */
+main #banner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 50px;
+}
+#banner .bannerLeft{
+    width: 50%;
+    padding-left: 150px;
+    line-height: 1.5;
+}
+#banner .bannerLeft h1{
+    font-family: "Noto Serif", serif;
+    font-size: 3rem;
+    text-shadow: 4px 4px 3px gray;
+}
+#banner .bannerRight{
+    width: 50%;
+}
+#banner button{
+    padding: 10px 15px 10px 15px;
+    margin: 10px 10px 0px 0px;
+    background-color: green;
+    font-weight: bold;
+    color: white;
+    border: none;
+}
+#banner button:hover{
+    background-color: #8B4513;
+    cursor: pointer;
+}
+
+/* -------Service part --------- */
+#service{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+#service h1{
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-align: center;
+    text-decoration: underline;
+}
+#service .service-cart > div{
+    height: 100%;
+    width: 33.3%;
+    text-align: center;
+    box-shadow: 5px 5px 5px gray;
+}
+.service-cart .img{
+    height: 50%;
+    width: 80%;
+}
+#service .service-cart{
+    height: 65vh;
+    width: 95vw;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+    margin: 0 auto;
+}
+#service .service-cart h3, p{
+    padding: 10px;
+}
+.web .img{
+    background-image: url('https://dianapps.com/blog/wp-content/uploads/2023/03/Untitled-design-40.png');
+    background-size: cover;
+    margin: 0 auto;
+}
+.app .img{
+    background-image: url('https://cdn.prod.website-files.com/65a790f0493b6806e60d6e21/660e8ac66813866c71248853_Choosing-a-Mobile-App-Framework.jpeg');
+    background-size: cover;
+    margin: 0 auto;
+}
+.desk .img{
+    background-image: url('https://deosoft.net/wp-content/uploads/2018/03/desktop-application-developer-company-ranchi-deosoft-e1702388279793.jpg');
+    background-size: cover;
+    margin: 0 auto;
+}
+#service .service-cart button{
+    padding: 15px;
+    background-color: grey;
+    color: white;
+    font-weight: bold;
+    border: none;
+    margin: 0 auto;
+}
