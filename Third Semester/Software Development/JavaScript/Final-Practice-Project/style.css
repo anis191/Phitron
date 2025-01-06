@@ -1,0 +1,30 @@
+*{
+    box-sizing: border-box;
+}
+main #search-bar{
+    height: 30vh;
+    gap: 5px;
+}
+#search-bar input, button{
+    height: 20%;
+}
+.all-div{
+    text-align: center;
+    padding: 10px;
+    box-shadow: 4px 4px 10px gray;
+}
+.all-div h3{
+    padding: 10px;
+}
+
+#details-div{
+    padding: 10px;
+    margin: 5px;
+    box-shadow: 7px 7px 10px gray;
+    border-radius: 10px;
+}
+
+main .ser, .btn1{
+    box-shadow: 5px 5px 10px gray;
+    border: none;
+}
