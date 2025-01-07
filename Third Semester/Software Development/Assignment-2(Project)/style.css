@@ -1,0 +1,30 @@
+*{
+    box-sizing: border-box;
+}
+header{
+    height: 20vh;
+    background-color: red;
+}
+#menu{
+    gap: 6px;
+}
+#menu .box{
+    height: auto;
+    box-shadow: 4px 4px 5px gray;
+    padding: 5px;
+    /* margin: 2px; */
+    flex-grow: 1;
+    text-align: center;
+}
+#menu .box image{
+    height: 50px;
+}
+#cart .list-group{
+    width: 90%;
+}
+
+ul li img{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+}
