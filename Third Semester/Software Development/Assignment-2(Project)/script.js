@@ -15,6 +15,32 @@ const DataSet = (dataset)=>{
     });
 };
 
+let serBtn = document.querySelector("#ser-btn");
+serBtn.addEventListener("click",()=>{
+let inputText = document.querySelector("#input").value;
+    fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${inputText}`)
+        .then(res=>res.json())
+        .then(info=>{
+            // console.log(info);
+            // AddSearchItem(info.drinks);
+            if(info.drinks != null){
+                AddSearchItem(info.drinks);
+            }else{
+                menu.innerHTML = "<p id='notFound'>Items not found!</p>";
+            }
+        })
+        .catch(err =>{
+            console.log(err);
+        });        
+});
+
+const AddSearchItem = (data)=>{
+    menu.innerHTML ="";
+    data.forEach(item =>{
+        AddItems(item);
+    });
+};
+
 let menu = document.querySelector("#menu");
 const AddItems = (data)=>{    
     let div = document.createElement("div");
@@ -24,25 +50,33 @@ const AddItems = (data)=>{
     <h5>Name: ${data.strGlass}</h5>
     <p>Category: ${data.strCategory}</p>
     <p>Instructions: ${data.strInstructions.slice(0,15)}....</p>
-    <button class="btn btn-primary" onclick="AddToCart('${data.strDrinkThumb}', '${data.strGlass}')">Add to Cart</button>
+    <button class="btn btn-primary btn1" onclick="AddToCart('${data.strDrinkThumb}', '${data.strGlass}', this)">Add to Cart</button>
     <button class="btn btn-secondary">Details</button>
     `;
+    // let btn1 = document.querySelector(".btn1");
+    // btn1.addEventListener("click",()=>{
+        // btn1.innerText = "Already Selected";
+    // });
     menu.append(div);
 };
 
 let count = 0;
 let ul = document.querySelector("ul");
-const AddToCart = (image, Name)=>{
+let totalItems = document.querySelector("#total");
+const AddToCart = (image, Name, btn1)=>{
     count ++;
     let li = document.createElement("li");
     li.setAttribute("class","list-group-item d-flex justify-content-between");
     li.innerHTML = `
-    <span>1</span>
+    <span>${count}</span>
     <img src="${image}" alt="" class="img-fluid">
-    <span>Name</span>
+    <span>${Name}</span>
     `;
-    // ul.append(li);
     if(count <= 7){
+        totalItems.innerText = `Total Cart: ${count}`;
         ul.append(li);
+        btn1.innerText = "Already Selected";
+        btn1.style.backgroundColor = "white";
+        btn1.style.color = "red";
     }
 };
