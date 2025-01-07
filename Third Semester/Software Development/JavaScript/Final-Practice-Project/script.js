@@ -17,29 +17,29 @@ btn1.addEventListener("click", ()=>{
 let row = document.querySelector(".all-item");
 
 const DataSet = (data) =>{
-    let existingDetails = document.querySelector("#details-div");
-    if(existingDetails){
-        existingDetails.remove();
+    let preDetails = document.querySelector("#details-div");
+    if(preDetails){
+        preDetails.remove();
     }
     row.innerHTML = "";
     data.forEach(obj => {
         let div = document.createElement("div");
         div.setAttribute("class","col all-div");
         div.innerHTML = `
-        <img src="https://img.pikbest.com/origin/10/14/03/204pIkbEsT3Yj.jpg!w700wp" alt="Image" class="img-fluid">
+        <img src="${obj.strMealThumb}" alt="Image" class="img-fluid">
         <h3>${obj.strMeal}</h3>
         `;
         div.addEventListener("click",()=>{
-            let existingDetails = document.querySelector("#details-div");
-            if (existingDetails) {
-                existingDetails.remove();
+            let preDetails = document.querySelector("#details-div");
+            if (preDetails) {
+                preDetails.remove();
             }
 
             let details = document.createElement("div");
             details.setAttribute("id","details-div");
             details.setAttribute("class","col-4");
             details.innerHTML = `
-            <img src="https://img.pikbest.com/origin/10/14/03/204pIkbEsT3Yj.jpg!w700wp" alt="Image" class="img-fluid">
+            <img src="${obj.strMealThumb}" alt="Image" class="img-fluid">
             <h3>${obj.strMeal}</h3>
             <ul></ul>
             `;
