@@ -1,7 +1,6 @@
 fetch('https://www.thecocktaildb.com/api/json/v1/1/search.php?s=a')
     .then(res=>res.json())
     .then(dataset=>{
-        // console.log(dataset.drinks);
         DataSet(dataset.drinks);
     })
     .catch(err =>{
@@ -10,7 +9,6 @@ fetch('https://www.thecocktaildb.com/api/json/v1/1/search.php?s=a')
 
 const DataSet = (dataset)=>{
     dataset.forEach(data => {
-        // console.log(data);
         AddItems(data);
     });
 };
@@ -21,8 +19,6 @@ let inputText = document.querySelector("#input").value;
     fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${inputText}`)
         .then(res=>res.json())
         .then(info=>{
-            // console.log(info);
-            // AddSearchItem(info.drinks);
             if(info.drinks != null){
                 AddSearchItem(info.drinks);
             }else{
@@ -51,13 +47,22 @@ const AddItems = (data)=>{
     <p>Category: ${data.strCategory}</p>
     <p>Instructions: ${data.strInstructions.slice(0,15)}....</p>
     <button class="btn btn-primary btn1" onclick="AddToCart('${data.strDrinkThumb}', '${data.strGlass}', this)">Add to Cart</button>
-    <button class="btn btn-secondary">Details</button>
+    <button class="btn btn-secondary" onclick="showDetails('${data.strGlass}', '${data.strDrinkThumb}' ,'${data.strCategory}', '${data.strAlcoholic}' ,'${data.strInstructions}')">Details</button>
     `;
-    // let btn1 = document.querySelector(".btn1");
-    // btn1.addEventListener("click",()=>{
-        // btn1.innerText = "Already Selected";
-    // });
     menu.append(div);
+};
+
+const showDetails = (name, image, category, alcoholic, instructions) => {
+    document.getElementById("modalTitle").innerText = name;
+    document.getElementById("modalBody").innerHTML = `
+        <img src="${image}" alt="${name}" class="img-fluid">
+        <p><strong>Details</strong></p>
+        <p>Category:<strong> ${category}</strong></p>
+        <p>Alcoholic: <strong>${alcoholic}</strong></p>
+        <p>${instructions}</p>
+    `;
+    const detailsModal = new bootstrap.Modal(document.getElementById("detailsModal"));
+    detailsModal.show();
 };
 
 let count = 0;

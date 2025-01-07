@@ -22,10 +22,6 @@
                 <!-- All drinks menu add -->
             </section>
             <section id="cart" class="w-25 d-flex justify-content-center">
-                <!-- <div class="cart-menu text-center"> -->
-                    <!-- <h3><strong>Total Cart: 0</strong></h3> -->
-                    <!-- <p><strong>SL &nbsp;&nbsp; Img &nbsp;&nbsp; Name</strong></p> -->
-                <!-- </div> -->
                 <ul class="list-group mx-auto">
                     <li class="list-group-item disabled" aria-disabled="true"><strong id="total">Total Cart: 0</strong></li>
                     <li class="list-group-item"><strong class="d-flex justify-content-between">
@@ -40,7 +36,23 @@
     <footer></footer>
     
     
-    
+    <div class="modal" id="detailsModal" tabindex="-1">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="modalTitle">Drink Details</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" id="modalBody">
+
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
     <script src="/script.js"></script>

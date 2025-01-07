@@ -3,7 +3,6 @@
 }
 header{
     height: 20vh;
-    background-color: red;
 }
 #menu{
     gap: 6px;
@@ -33,4 +32,29 @@ ul li img{
     font-size: 3rem;
     text-align: center;
     margin: auto;
+}
+
+.modal img{
+    width: 85%;
+    height: 300px;
+    margin-bottom: 5px;
+    /* display: block; */
+    /* margin: auto; */
+}
+
+#modalBody > img, p{
+    padding-left: 20px;
+    margin-left: 20px;
+}
+
+#total{
+    color: blue;
+}
+
+#input, #ser-btn{
+    box-shadow: 4px 4px 5px gray;
+}
+
+#cart{
+    margin-left: 5px;
 }
