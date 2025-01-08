@@ -83,5 +83,7 @@ const AddToCart = (image, Name, btn1)=>{
         btn1.innerText = "Already Selected";
         btn1.style.backgroundColor = "white";
         btn1.style.color = "red";
+    }else{
+        alert("Can't add more then 7 items!");
     }
 };
