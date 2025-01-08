@@ -5,8 +5,11 @@ btn1.addEventListener("click", ()=>{
     fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${txt}`)
         .then(res=>res.json())
         .then(data=>{
-            DataSet(data.meals);
-            // console.log(data.meals);
+            if(data.meals != null){
+                DataSet(data.meals);
+            }else{
+                row.innerHTML = "<h1>Item is not found!</h1>";
+            }
     })
     .catch(err =>{
         console.log(err);
