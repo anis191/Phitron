@@ -3,36 +3,166 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="/CSS/tailwind.css">
+    <title>EventHub Pro - Professional Event Management</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body>
-    <header>
-        <h1 class="italic hover:not-italic">This is heading no - 1</h1>
-        <h1 class="hover:bg-red-500">This is heading no - 2</h1>
-        <h1 class="text-2xl text-anis font-bold">This is heading no - 3</h1>
-        <h1 class="mini:text-center text-2xl text-anis">This is heading no - 4</h1>
-    </header>
-    <main>
-        <h1 class="font-bold text-3xl mini:bg-blue-700 sm:text-end md:text-center lg:bg-red-500 xl:text-3xl 2xl:bg-green-500">Hello world!</h1>
+<body class="font-[Poppins] bg-gray-50">
+    <!-- Dashboard Layout -->
+    <div class="min-h-screen flex">
+        <!-- Sidebar -->
+        <aside class="bg-[#2C3E50] w-64 min-h-screen p-4 fixed">
+            <div class="mb-8">
+                <div class="flex items-center">
+                    <i class="fas fa-calendar-alt text-2xl text-[#18BC9C]"></i>
+                    <span class="text-white text-xl font-bold ml-2">EventHub Pro</span>
+                </div>
+            </div>
+            <nav class="space-y-2">
+                <a href="#" class="flex items-center p-2 text-white bg-[#34495E] rounded">
+                    <i class="fas fa-home mr-3"></i> Dashboard
+                </a>
+                <a href="#" class="flex items-center p-2 text-gray-300 hover:bg-[#34495E] rounded">
+                    <i class="fas fa-calendar-check mr-3"></i> My Events
+                </a>
+                <a href="#" class="flex items-center p-2 text-gray-300 hover:bg-[#34495E] rounded">
+                    <i class="fas fa-users mr-3"></i> Attendees
+                </a>
+                <a href="#" class="flex items-center p-2 text-gray-300 hover:bg-[#34495E] rounded">
+                    <i class="fas fa-chart-bar mr-3"></i> Analytics
+                </a>
+                <a href="#" class="flex items-center p-2 text-gray-300 hover:bg-[#34495E] rounded">
+                    <i class="fas fa-cog mr-3"></i> Settings
+                </a>
+            </nav>
+        </aside>
 
-        <div class="max-w-[70vw] bg-black mx-auto">
-            <h1 class="text-3xl font-bold text-white text-center">Hello User!</h1>
-            <p class="text-2xl text-[#800080] bg-[white] text-center">This is a paragraph</p>
-        </div>
-        <section class="bg-anis">
-            <div class="text-sm max-w-prose bg-blue-500">
-                <p>Oh yeah. It's the best part. It's crunchy, it's explosive, it's where the muffin breaks free of the pan and sort of does it's own thing. I'll tell you. That's a million dollar idea right there. Just sell the tops.</p>
-              </div>
-              
-              <div class="text-base max-w-prose bg-yellow-300">
-                <p>Oh yeah. It's the best part. It's crunchy, it's explosive, it's where the muffin breaks free of the pan and sort of does it's own thing. I'll tell you. That's a million dollar idea right there. Just sell the tops.</p>
-              </div>
-              
-              <div class="text-xl max-w-prose bg-purple-600">
-                <p>Oh yeah. It's the best part. It's crunchy, it's explosive, it's where the muffin breaks free of the pan and sort of does it's own thing. I'll tell you. That's a million dollar idea right there. Just sell the tops.</p>
-              </div>
-        </section>
-    </main>
+        <!-- Main Content -->
+        <main class="flex-1 ml-64 p-8">
+            <!-- Header -->
+            <header class="flex justify-between items-center mb-8">
+                <h1 class="text-2xl font-bold text-[#2C3E50]">Organizer Dashboard</h1>
+                <div class="flex items-center space-x-4">
+                    <button class="bg-[#F1C40F] text-[#2C3E50] px-4 py-2 rounded hover:bg-[#f8d776]">
+                        <i class="fas fa-plus mr-2"></i>New Event
+                    </button>
+                    <div class="w-8 h-8 bg-[#18BC9C] rounded-full flex items-center justify-center">
+                        <span class="text-white font-medium">JD</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Stats Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-gray-500">Total Events</p>
+                            <p class="text-3xl font-bold">12</p>
+                        </div>
+                        <div class="w-12 h-12 bg-[#18BC9C]/20 rounded-full flex items-center justify-center">
+                            <i class="fas fa-calendar text-[#18BC9C]"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-gray-500">Attendees</p>
+                            <p class="text-3xl font-bold">1,234</p>
+                        </div>
+                        <div class="w-12 h-12 bg-[#F1C40F]/20 rounded-full flex items-center justify-center">
+                            <i class="fas fa-users text-[#F1C40F]"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-gray-500">Revenue</p>
+                            <p class="text-3xl font-bold">$15,230</p>
+                        </div>
+                        <div class="w-12 h-12 bg-[#2C3E50]/20 rounded-full flex items-center justify-center">
+                            <i class="fas fa-dollar-sign text-[#2C3E50]"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Event Creation Form -->
+            <div class="bg-white rounded-lg shadow p-6 mb-8">
+                <h2 class="text-xl font-bold text-[#2C3E50] mb-6">Create New Event</h2>
+                <form class="space-y-4">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-gray-700 mb-2">Event Name</label>
+                            <input type="text" class="w-full p-2 border rounded focus:ring-2 focus:ring-[#18BC9C] focus:border-transparent">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 mb-2">Event Date</label>
+                            <input type="date" class="w-full p-2 border rounded focus:ring-2 focus:ring-[#18BC9C] focus:border-transparent">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 mb-2">Event Type</label>
+                            <select class="w-full p-2 border rounded focus:ring-2 focus:ring-[#18BC9C] focus:border-transparent">
+                                <option>Conference</option>
+                                <option>Workshop</option>
+                                <option>Networking</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 mb-2">Ticket Price ($)</label>
+                            <input type="number" class="w-full p-2 border rounded focus:ring-2 focus:ring-[#18BC9C] focus:border-transparent">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 mb-2">Event Description</label>
+                        <textarea rows="4" class="w-full p-2 border rounded focus:ring-2 focus:ring-[#18BC9C] focus:border-transparent"></textarea>
+                    </div>
+                    <button class="bg-[#18BC9C] text-white px-6 py-2 rounded hover:bg-[#13987d] transition-colors">
+                        Create Event
+                    </button>
+                </form>
+            </div>
+
+            <!-- Recent Events Table -->
+            <div class="bg-white rounded-lg shadow overflow-hidden">
+                <div class="p-6 border-b">
+                    <h3 class="text-lg font-semibold text-[#2C3E50]">Recent Events</h3>
+                </div>
+                <table class="w-full">
+                    <thead class="bg-gray-50">
+                        <tr>
+                            <th class="px-6 py-3 text-left text-sm text-gray-500">Event Name</th>
+                            <th class="px-6 py-3 text-left text-sm text-gray-500">Date</th>
+                            <th class="px-6 py-3 text-left text-sm text-gray-500">Attendees</th>
+                            <th class="px-6 py-3 text-left text-sm text-gray-500">Status</th>
+                            <th class="px-6 py-3 text-left text-sm text-gray-500">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y">
+                        <tr>
+                            <td class="px-6 py-4">Tech Summit 2023</td>
+                            <td class="px-6 py-4">2023-10-15</td>
+                            <td class="px-6 py-4">450</td>
+                            <td class="px-6 py-4">
+                                <span class="px-2 py-1 bg-[#18BC9C]/20 text-[#13987d] rounded-full text-sm">Active</span>
+                            </td>
+                            <td class="px-6 py-4">
+                                <button class="text-[#18BC9C] hover:text-[#13987d] mr-2">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <button class="text-red-500 hover:text-red-600">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <!-- Add more rows -->
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
 </body>
 </html>

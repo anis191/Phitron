@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/CSS/tailwind.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="font-[Poppins] bg-gray-50">
+    <header>
+        <nav class="bg-[#2C3E50] text-white">
+            <div class="container mx-auto px-6 py-4">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center">
+                        <i class="fas fa-calendar-alt text-2xl text-[#18BC9C]"></i>
+                        <a href="#" class="text-xl font-bold ml-2">EventZone</a>
+                    </div>
+                    <div class="hidden md:flex space-x-8">
+                        <a href="#" class="hover:text-[#18BC9C]">Home</a>
+                        <a href="#" class="hover:text-[#18BC9C]">All Events</a>
+                        <a href="#" class="hover:text-[#18BC9C]">Dashboard</a>
+                        <a href="#" class="bg-[#F1C40F] text-[#2C3E50] px-4 py-2 rounded-full hover:bg-[#f8d776]">Login</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <section class="container mx-auto flex justify-between items-center mt-8 mb-5 px-5">
+            <h1 class="md:text-2xl text-xl font-bold text-[#2C3E50]">Organizer Dashboard</h1>
+            <button class="bg-[#F1C40F] text-[#2C3E50] px-4 py-2 rounded hover:bg-[#f8d776]">
+                <i class="fas fa-plus mr-2"></i>New Event
+            </button>
+        </section>        
+    </header>
+    <main class="px-5">
+        <!--stats grid-->
+        <section class="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-8">
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-gray-500">Total Events</p>
+                        <p class="text-3xl font-bold">12</p>
+                    </div>
+                    <div class="w-12 h-12 bg-[#18BC9C]/20 rounded-full flex items-center justify-center">
+                        <i class="fas fa-calendar text-[#18BC9C]"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-gray-500">Upcoming events</p>
+                        <p class="text-3xl font-bold">25</p>
+                    </div>
+                    <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center">
+                        <i class="fa-solid fa-calendar-plus text-red-400"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-gray-500">Past events</p>
+                        <p class="text-3xl font-bold">151</p>
+                    </div>
+                    <div class="w-12 h-12 bg-[#2C3E50]/20 rounded-full flex items-center justify-center">
+                        <i class="fa-solid fa-calendar-check text-[#2C3E50]"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-gray-500">Total participants</p>
+                        <p class="text-3xl font-bold">12</p>
+                    </div>
+                    <div class="w-12 h-12 bg-[#18BC9C]/20 rounded-full flex items-center justify-center">
+                        <i class="fas fa-users text-[#18BC9C]"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--todays events-->
+        <section class="p-6 mb-8">
+            <h2 class="text-xl font-bold text-[#2C3E50] mb-6">Today's Events</h2>
+            <!--all todays events-->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- event card's -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg">
+                    <img src="https://static.inevent.com/images/event-management-software.jpg" alt="Event" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="text-sm text-[#18BC9C] font-semibold mb-2">June 25, 2023</div>
+                        <h3 class="text-xl font-bold mb-2">Tech Conference 2023</h3>
+                        <p class="text-gray-600 mb-4"><i class="fas fa-map-marker-alt mr-2"></i>New York City, NY</p>
+                        <button class="w-full bg-[#2C3E50] text-white px-4 py-2 rounded hover:bg-[#34495E] transition-colors">
+                            View Details
+                        </button>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg">
+                    <img src="https://static.inevent.com/images/event-management-software.jpg" alt="Event" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="text-sm text-[#18BC9C] font-semibold mb-2">June 25, 2023</div>
+                        <h3 class="text-xl font-bold mb-2">Tech Conference 2023</h3>
+                        <p class="text-gray-600 mb-4"><i class="fas fa-map-marker-alt mr-2"></i>New York City, NY</p>
+                        <button class="w-full bg-[#2C3E50] text-white px-4 py-2 rounded hover:bg-[#34495E] transition-colors">
+                            View Details
+                        </button>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg">
+                    <img src="https://static.inevent.com/images/event-management-software.jpg" alt="Event" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="text-sm text-[#18BC9C] font-semibold mb-2">June 25, 2023</div>
+                        <h3 class="text-xl font-bold mb-2">Tech Conference 2023</h3>
+                        <p class="text-gray-600 mb-4"><i class="fas fa-map-marker-alt mr-2"></i>New York City, NY</p>
+                        <button class="w-full bg-[#2C3E50] text-white px-4 py-2 rounded hover:bg-[#34495E] transition-colors">
+                            View Details
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer></footer>
+</body>
+</html>
