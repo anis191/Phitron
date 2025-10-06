@@ -28,7 +28,7 @@ On **September 24, 2025**, I successfully completed the course and earned my off
 > **Final CGPA:** 3.67 out of 4 ✅
 
 <p align="center">
-  <a href="./assets/certificate.pdf" target="_blank">
+  <a href="./assets/Phitron_Certificate.jpg" target="_blank">
     <img src="./assets/Phitron_Certificate.jpg  " alt="CSE Fundamentals with Phitron - Certificate" width="640" />
   </a>
 </p>
