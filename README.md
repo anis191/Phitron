@@ -58,7 +58,7 @@ On **September 24, 2025**, I successfully completed the course and earned my off
 | Platform                                                                                                           | Profile                                                         |
 | ------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------- |
 | <img src="https://cdn.worldvectorlogo.com/logos/hackerrank.svg" alt="HackerRank" height="28" style="height:28px; width:auto; vertical-align:middle; margin-right:6px;" /> **HackerRank**                        | [View Profile →](https://www.hackerrank.com/profile/anisulalam) |
-| <img src="https://leetcode.com/static/images/LeetCode_logo_rvs.png" alt="LeetCode" height="28" style="height:28px; width:auto; vertical-align:middle; margin-right:6px;" /> **LeetCode**                      | [View Profile →](https://leetcode.com/u/Anisul_Alam/)           |
+| <img src="https://leetcode.com/static/images/LeetCode_logo_rvs.png" alt="LeetCode" height="28" style="height:28px; width:auto; vertical-align:middle; margin-right:6px;" /> **LeetCode**                      | [View Profile →](https://leetcode.com/u/anisul-alam/)           |
 | <img src="https://sta.codeforces.com/s/99645/images/codeforces-logo-with-telegram.png" alt="Codeforces" height="28" style="height:28px; width:auto; vertical-align:middle; margin-right:6px;" /> **Codeforces** | [View Profile →](https://codeforces.com/profile/anis119)        |
 
 ---
@@ -161,3 +161,13 @@ This part consisted of **4 major milestones**, each representing a new technolog
 This repository is a timeline of my learning — every folder is a milestone, every commit a lesson. If you explore the code and live demos, you'll see how I progressed from basic programs to industry-standard full-stack projects.
 
 **If this story inspired you, please ⭐ star the repo and share feedback!**
+
+---
+
+## 💻 Author
+**Anisul Alam**  
+Full-Stack Developer | Django | React | PostgreSQL
+
+[![LinkedIn](https://img.shields.io/badge/-LinkedIn-0A66C2?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/anisulalam/)
+[![Portfolio](https://img.shields.io/badge/-Portfolio-000?style=flat&logo=vercel&logoColor=white)](https://anisulalam.vercel.app/)
+---
